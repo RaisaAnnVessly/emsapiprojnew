@@ -1,0 +1,8 @@
+**/__pycache__/
+**/migrations/
+**/__init__.py
+**/asgi.py
+**/wsgi.py
+**/manage.py
+#we dont want to push the noncoding files to git
+#these files will create problems so we ignore it
