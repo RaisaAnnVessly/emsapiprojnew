@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-mf+n3ynj8d^l3iiv5780i(-0=kjb#m1$r1%6z4gya(r0o5mmvg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+CORS_ALLOW_ALL_ORIGIN= True
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'rest_framework.authtoken',
+    
 ]
 
 MIDDLEWARE = [
@@ -52,7 +54,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
-CORS_ORIGIN_ALLOW_ALL= True
+#CORS_ORIGIN_ALLOW_ALL= True
+CORS_ALLOWED_ORIGINS=[
+    "http://localhost:4200",   #Your Angular app's URL
+]
 
 ROOT_URLCONF = 'emsapiproj.urls'
 
